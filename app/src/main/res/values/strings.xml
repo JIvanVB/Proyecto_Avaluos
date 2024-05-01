@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Proyacto Avaluos</string>
+    <string name="titulo">Movil Avaluos</string>
+    <string name="usu">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="ingr">Ingresar</string>
+    <string name="im">imagen</string>
+    <string name="olusu">¿Olvidaste tu usuario?</string>
+    <string name="olpas">¿Olvidaste tu contraseña?</string>
+    <string name="foac">Folios Activos</string>
+</resources>

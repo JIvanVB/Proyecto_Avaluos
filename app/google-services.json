@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "978431453816",
+    "project_id": "proyacto-avaluos",
+    "storage_bucket": "proyacto-avaluos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978431453816:android:bc7f4611ae1b7ca5111b8d",
+        "android_client_info": {
+          "package_name": "mx.itson.edu.proyactoavaluos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFviajsR7ZifU8rbFEsVM3Ag8o35TUaj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978431453816:android:18bd444cf7a3b947111b8d",
+        "android_client_info": {
+          "package_name": "mx.itson.edu.proyectoavaluos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFviajsR7ZifU8rbFEsVM3Ag8o35TUaj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
