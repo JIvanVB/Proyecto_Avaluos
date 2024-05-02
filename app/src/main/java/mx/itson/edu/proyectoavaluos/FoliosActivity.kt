@@ -3,10 +3,12 @@ package mx.itson.edu.proyectoavaluos
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import mx.itson.edu.proyectoavaluos.databinding.ActivityMainBinding
 
 class FoliosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +21,7 @@ class FoliosActivity : AppCompatActivity() {
             insets
         }
 
-
+        findViewById<TextView>(R.id.textViewTitle).text=ActivityMainBinding.inflate(layoutInflater).editTextUsername.text.toString()
         val linearLayout = findViewById<LinearLayout>(R.id.buttonList)
         val button = Button(this)
         button.text = "Botón dinámico"

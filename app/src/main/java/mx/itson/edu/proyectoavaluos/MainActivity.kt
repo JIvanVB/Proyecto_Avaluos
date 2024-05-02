@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
              else
                 signIn(mEmail, mPassword)
         }
+
+        binding.textViewForgotUsername.setOnClickListener {
+            startActivity(Intent(this,RegistrarseActivity::class.java))
+        }
     }
 
     private fun signIn(email: String, password: String) {

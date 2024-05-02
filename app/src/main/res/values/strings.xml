@@ -5,8 +5,11 @@
     <string name="pass">Contraseña</string>
     <string name="ingr">Ingresar</string>
     <string name="im">imagen</string>
-    <string name="olusu">¿Olvidaste tu usuario?</string>
+    <string name="olusu">¿No estas registrado?</string>
     <string name="olpas">¿Olvidaste tu contraseña?</string>
     <string name="foac">Folios Activos</string>
     <string name="addfolio">Agregar Folio</string>
+    <string name="tituloRegistrarse">Registro de Usuario</string>
+    <string name="passvalid">Confirmar Contraseña</string>
+    <string name="regi">Registrarse</string>
 </resources>
