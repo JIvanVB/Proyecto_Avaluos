@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d("TAG", "signInWithEmail:success")
-                    startActivity(Intent(this,FoliosActivity::class.java).also { it.putExtra("usuario",email)})
+                    startActivity(Intent(this,FoliosActivity::class.java))
                 } else {
                     Log.w("TAG", "signInWithEmail:failure", task.exception)
                     Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
