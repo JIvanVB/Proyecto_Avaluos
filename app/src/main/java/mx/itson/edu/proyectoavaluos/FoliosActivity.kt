@@ -21,7 +21,8 @@ class FoliosActivity : AppCompatActivity() {
             insets
         }
 
-        findViewById<TextView>(R.id.textViewTitle).text=ActivityMainBinding.inflate(layoutInflater).editTextUsername.text.toString()
+        findViewById<TextView>(R.id.textViewTitle).text="Folios de "+ intent.getStringExtra("usuario")!!
+            .substringBefore('@')
         findViewById<Button>(R.id.buttonAddFolios).setOnClickListener{
             findViewById<LinearLayout>(R.id.buttonList).addView(Button(this).apply { text="Folio" })
         }
