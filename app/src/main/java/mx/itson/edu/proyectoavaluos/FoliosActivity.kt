@@ -22,12 +22,10 @@ class FoliosActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.textViewTitle).text=ActivityMainBinding.inflate(layoutInflater).editTextUsername.text.toString()
-        val linearLayout = findViewById<LinearLayout>(R.id.buttonList)
-        val button = Button(this)
-        button.text = "Botón dinámico"
-        button.height=200
+        findViewById<Button>(R.id.buttonAddFolios).setOnClickListener{
+            findViewById<LinearLayout>(R.id.buttonList).addView(Button(this).apply { text="Folio" })
+        }
 
-        linearLayout.addView(button)
-        for (i in  1..10)linearLayout.addView(Button(this).apply { text="boton que no hace nada";height=200 })
+        //for (i in  1..10)linearLayout.addView(Button(this).apply { text="boton que no hace nada";height=200 })
     }
 }
