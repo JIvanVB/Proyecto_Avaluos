@@ -12,31 +12,40 @@
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="16dp"
         android:text="@string/foac"
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/buttonAddFolios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/addfolio"
+         />
+
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:layout_below="@id/textViewTitle"
         android:background="@android:color/black" />
 
     <ScrollView
+        android:id="@+id/scroller"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/divider">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/buttonList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp" />
-    </ScrollView>
+            android:padding="16dp">
 
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

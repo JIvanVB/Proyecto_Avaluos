@@ -8,4 +8,5 @@
     <string name="olusu">¿Olvidaste tu usuario?</string>
     <string name="olpas">¿Olvidaste tu contraseña?</string>
     <string name="foac">Folios Activos</string>
+    <string name="addfolio">Agregar Folio</string>
 </resources>

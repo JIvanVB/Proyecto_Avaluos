@@ -10,15 +10,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:src=""
+        android:layout_marginTop="50dp"
+        android:src="@drawable/avaluo"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:layout_marginBottom="16dp"
-        android:contentDescription="@string/im" />
+        />
 
     <TextView
         android:id="@+id/textViewTitle"
@@ -33,20 +33,20 @@
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="@string/usu"
+        android:hint="@string/usu"
         android:inputType="text"
         android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="@string/usu"
+        android:hint="@string/pass"
         android:inputType="textPassword"
         android:layout_marginTop="8dp"
         android:autofillHints="" />
@@ -65,7 +65,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/olusu"
-        android:textColor="@color/cardview_dark_background"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp" />
 
@@ -74,7 +73,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/olpas"
-        android:textColor="@color/cardview_dark_background"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="8dp" />
 
