@@ -13,8 +13,29 @@
         android:theme="@style/Theme.ProyectoAvaluos"
         tools:targetApi="31">
         <activity
-            android:name=".AvaluosAltaActivity"
+            android:name=".PlatfonesActivity"
             android:exported="false" />
+        <activity
+            android:name=".MurosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PisosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FotosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EntornoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AcabadosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InmuebleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ModuloCapturaActivity"
+            android:exported="true" />
         <activity
             android:name=".RegistrarseActivity"
             android:exported="true" />

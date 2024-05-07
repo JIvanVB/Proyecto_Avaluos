@@ -9,4 +9,14 @@
     <string name="pais">Pais</string>
     <string name="folios_de">"Folios activos de "</string>
     <string name="newAvaluo">Nuevo Avaluo</string>
+    <string name="folio">Folio</string>
+    <string name="modulo_de_captura">Modulo de Captura:</string>
+    <string name="caracter_sticas_del_inmueble">Características del Inmueble</string>
+    <string name="caracter_sticas_del_entorno">Características del Entorno</string>
+    <string name="fotograf_as">Fotografías</string>
+    <string name="sala">Sala</string>
+    <string name="alta_de_otro">Alta de otro</string>
+    <string name="pisos">Pisos</string>
+    <string name="muros">Muros</string>
+    <string name="platfones">Platfones</string>
 </resources>

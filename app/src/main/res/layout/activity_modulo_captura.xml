@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ModuloCapturaActivity">
+
+    <TextView
+        android:id="@+id/textViewTitleFolio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="@string/folio"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textViewModuloCaptura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="@string/modulo_de_captura"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewInmueble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_margin="15dp"
+        android:textSize="20sp"
+        android:text="@string/caracter_sticas_del_inmueble"/>
+    <TextView
+        android:id="@+id/textViewEntorno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_margin="15dp"
+        android:textSize="20sp"
+        android:text="@string/caracter_sticas_del_entorno"/>
+    <TextView
+        android:id="@+id/textViewFotografias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_margin="15dp"
+        android:textSize="20sp"
+        android:text="@string/fotograf_as"/>
+
+</LinearLayout>

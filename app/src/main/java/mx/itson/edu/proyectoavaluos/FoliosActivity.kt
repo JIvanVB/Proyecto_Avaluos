@@ -1,14 +1,20 @@
 
 package mx.itson.edu.proyectoavaluos
 
+import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Intent
+
 import android.icu.text.SimpleDateFormat
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.LinearLayout
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -16,7 +22,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.size
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -27,7 +32,7 @@ import java.util.Locale
 
 class FoliosActivity : AppCompatActivity() {
     private lateinit var dbRef:DatabaseReference
-    private lateinit var listAval: ArrayList<Avaluo>
+    private lateinit var lvDatos : ListView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,10 +42,10 @@ class FoliosActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        lvDatos = findViewById(R.id.buttonList)
+
 
         val usuario=intent.getStringExtra("usuario")!!.substringBefore('@')
-        listAval = ArrayList()
-        val tis=this
         dbRef=FirebaseDatabase.getInstance().getReference("Avaluos")
 
         val diag = Dialog(this).apply {
@@ -48,7 +53,6 @@ class FoliosActivity : AppCompatActivity() {
             window!!.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT)
             window!!.setBackgroundDrawable(R.drawable.diag_fondo.toDrawable())
             setCancelable(false)
-            "AV${SimpleDateFormat("HHmmssddMMyyyy",Locale.US).format(Calendar.getInstance().time)}".also { it.also { findViewById<TextView>(R.id.subTituloAvalDiag).text = it } }
             findViewById<Button>(R.id.botonCancelarDiag).setOnClickListener { this.dismiss() }
             findViewById<Button>(R.id.botonAgregarDiag).setOnClickListener {
                 if (findViewById<EditText>(R.id.editTextNomCalle).text.isEmpty()||findViewById<EditText>(R.id.editTextNum).text.isEmpty()||
@@ -78,38 +82,50 @@ class FoliosActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.buttonAddFolios).setOnClickListener{
+            "AV${SimpleDateFormat("HHmmssddMMyyyy",Locale.US).format(Calendar.getInstance().time)}".also { it.also { diag.findViewById<TextView>(R.id.subTituloAvalDiag).text = it } }
             diag.show()
         }
 
-        //for (i in  1..10)linearLayout.addView(Button(this).apply { text="boton que no hace nada";height=200 })
+        val avaluos = ArrayList<Avaluo>()
+        val ada = object : ArrayAdapter<Avaluo>(this, R.layout.item_avaluo, avaluos){
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                var vista = convertView
+                if (vista == null) {
+                    vista = LayoutInflater.from(context).inflate(R.layout.item_avaluo, parent, false)
+                    vista.findViewById<TextView>(R.id.ava).text= avaluos[position].id
+                    vista.findViewById<TextView>(R.id.ava).setOnClickListener {
+                        startActivity(Intent(this@FoliosActivity, ModuloCapturaActivity::class.java)
+                            .putExtra("usuario",usuario)
+                            .putExtra("id", avaluos[position].id))
+                    }
+                }
+                return vista!!
+            }
+        }
+        lvDatos.adapter=ada
         dbRef.child(usuario).addChildEventListener(
             object : ChildEventListener {
                 override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
 
                     snapshot.let { sn ->
-                        val cc = sn
 
-                        val id = cc.child("id").value
-                        val usu = cc.child("usuario").value
-                        val calle = cc.child("calle").value
-                        val numCasa = cc.child("numCasa").value
-                        val codPostal = cc.child("codPostal").value
-                        val municipio = cc.child("municipio").value
-                        val pais = cc.child("pais").value
+                        val id = sn.child("id").value
+                        val usu = sn.child("usuario").value
+                        val calle = sn.child("calle").value
+                        val numCasa = sn.child("numCasa").value
+                        val codPostal = sn.child("codPostal").value
+                        val municipio = sn.child("municipio").value
+                        val pais = sn.child("pais").value
 
-                        listAval.add(Avaluo(id.toString(), usu.toString(), calle.toString(), numCasa.toString(), codPostal.toString(), municipio.toString(), pais.toString()))
+                        avaluos.add(Avaluo(id.toString(), usu.toString(), calle.toString(), numCasa.toString(), codPostal.toString(), municipio.toString(), pais.toString()))
+                        ada.notifyDataSetChanged()
                     }
-
-                    listAval.forEach { findViewById<LinearLayout>(R.id.buttonList).
-                    addView(Button(tis).apply { text=it.id;setOnClickListener { startActivity(Intent(tis,AvaluosAltaActivity::class.java).putExtra("folio",it.id)) } })}
-
-
                 }
                 override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {                }
                 override fun onChildRemoved(snapshot: DataSnapshot) {                }
                 override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {                }
                 override fun onCancelled(error: DatabaseError) {                }
-
             })
+
     }
 }

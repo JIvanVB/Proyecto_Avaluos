@@ -6,25 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FoliosActivity">
+    tools:context=".FotosActivity">
 
     <TextView
-        android:id="@+id/textViewTitle"
+        android:id="@+id/textViewTitleFolio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start"
         android:padding="16dp"
-        android:text="@string/foac"
+        android:text="@string/folio"
         android:textSize="24sp"
         android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonAddFolios"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:text="@string/addfolio"
-         />
 
     <View
         android:id="@+id/divider"
@@ -32,13 +24,24 @@
         android:layout_height="5dp"
         android:background="@android:color/black" />
 
-    <ListView
-        android:id="@+id/buttonList"
+    <TextView
+        android:id="@+id/textViewModuloCaptura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_margin="5dp">
-
-    </ListView>
+        android:gravity="start"
+        android:padding="16dp"
+        android:text="@string/fotograf_as"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/caract"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
