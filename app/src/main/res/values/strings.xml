@@ -12,4 +12,13 @@
     <string name="tituloRegistrarse">Registro de Usuario</string>
     <string name="passvalid">Confirmar Contraseña</string>
     <string name="regi">Registrarse</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="agregar">Agregar</string>
+    <string name="nom_calle">Nombre de la Calle</string>
+    <string name="num">Número de casa</string>
+    <string name="codPostal">Codigo postal</string>
+    <string name="Muni">Municipio</string>
+    <string name="pais">Pais</string>
+    <string name="folios_de">"Folios activos de "</string>
+    <string name="newAvaluo">Nuevo Avaluo</string>
 </resources>
