@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PlatfonesActivity">
+    tools:context=".GeneralEntornoActivity">
 
     <TextView
         android:id="@+id/textViewTitulo"
@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:gravity="start"
         android:padding="16dp"
+        android:hint="www"
         android:textSize="24sp"
         android:textStyle="bold"
         />

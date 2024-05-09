@@ -31,4 +31,6 @@
     <string name="pisos">Pisos</string>
     <string name="muros">Muros</string>
     <string name="platfones">Platfones</string>
+    <string name="opcion_diferente">Opcion diferente</string>
+    <string name="ingrese_una_nueva_opcion">Ingrese una nueva opcion</string>
 </resources>

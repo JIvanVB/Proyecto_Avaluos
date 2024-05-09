@@ -21,6 +21,7 @@ class AcabadosActivity : AppCompatActivity() {
 
         val usuario=intent.getStringExtra("usuario")!!
         val id=intent.getStringExtra("id")!!
+        val captura=intent.getStringExtra("captura")!!
         val acabado=intent.getStringExtra("acabado")!!
 
         findViewById<TextView>(R.id.textViewTitleFolio).text = buildString {
@@ -29,10 +30,27 @@ class AcabadosActivity : AppCompatActivity() {
             append(" ")
             append(usuario)
             append(" ")
+            append(captura)
+            append(" ")
             append(acabado)
         }
-        findViewById<TextView>(R.id.textViewInmueble).setOnClickListener { startActivity(Intent(this,PisosActivity::class.java).putExtra("usuario",usuario).putExtra("id",id)) }
-        findViewById<TextView>(R.id.textViewEntorno).setOnClickListener { startActivity(Intent(this,MurosActivity::class.java).putExtra("usuario",usuario).putExtra("id",id)) }
-        findViewById<TextView>(R.id.textViewFotografias).setOnClickListener { startActivity(Intent(this,PlatfonesActivity::class.java).putExtra("usuario",usuario).putExtra("id",id)) }
+        findViewById<TextView>(R.id.textViewInmueble).setOnClickListener { startActivity(Intent(this,PisosActivity::class.java)
+            .putExtra("usuario",usuario)
+            .putExtra("id",id)
+            .putExtra("captura",captura)
+            .putExtra("acabado",acabado)
+            .putExtra("pisos","pisos")) }
+        findViewById<TextView>(R.id.textViewEntorno).setOnClickListener { startActivity(Intent(this,MurosActivity::class.java)
+            .putExtra("usuario",usuario)
+            .putExtra("id",id)
+            .putExtra("captura",captura)
+            .putExtra("acabado",acabado)
+            .putExtra("muros","muros")) }
+        findViewById<TextView>(R.id.textViewFotografias).setOnClickListener { startActivity(Intent(this,PlatfonesActivity::class.java)
+            .putExtra("usuario",usuario)
+            .putExtra("id",id)
+            .putExtra("captura",captura)
+            .putExtra("acabado",acabado)
+            .putExtra("platfones","platfones")) }
     }
 }

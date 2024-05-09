@@ -26,6 +26,7 @@ class InmuebleActivity : AppCompatActivity() {
 
         val usuario=intent.getStringExtra("usuario")!!
         val id=intent.getStringExtra("id")!!
+        val captura=intent.getStringExtra("captura")!!
 
         findViewById<TextView>(R.id.textViewTitleFolio).text = buildString {
             append("Folio ")
@@ -41,18 +42,71 @@ class InmuebleActivity : AppCompatActivity() {
                     LinearLayout.LayoutParams.WRAP_CONTENT)
                 textSize=20F
                 setPadding(10)
-                setOnClickListener { startActivity(Intent(this@InmuebleActivity,AcabadosActivity::class.java).putExtra("usuario",usuario).putExtra("id",id).putExtra("acabado",tex)) }
+                setOnClickListener { startActivity(Intent(this@InmuebleActivity,AcabadosActivity::class.java)
+                    .putExtra("usuario",usuario)
+                    .putExtra("id",id)
+                    .putExtra("captura",captura)
+                    .putExtra("acabado",tex.toString())) }
             })
         }
-        //arrayOf("Instalaciones Hidráulicas y Sanitarias", "Instalaciones Eléctricas", "Cancelería y comunicaciones", "Obras Complementarias", "Elementos Accesorios")
+        arrayOf("Instalaciones Hidraulicas y Sanitarias", "Instalaciones Electricas", "Canceleria y comunicaciones").forEach {
+            tex ->
+            findViewById<LinearLayout>(R.id.caract).addView(Button(this).apply {
+                text = tex
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT)
+                textSize=20F
+                setPadding(10)
+                setOnClickListener { startActivity(Intent(this@InmuebleActivity,GeneralActivity::class.java)
+                    .putExtra("usuario",usuario)
+                    .putExtra("id",id)
+                    .putExtra("captura",captura)
+                    .putExtra("acabado",tex.toString())) }
+            })
+        }
+
         findViewById<LinearLayout>(R.id.caract).addView(Button(this).apply {
+            text = "Obras Complementarias"
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT)
+            textSize=20F
+            setPadding(10)
+            setOnClickListener { startActivity(Intent(this@InmuebleActivity,AfueraActivity::class.java)
+                .putExtra("usuario",usuario)
+                .putExtra("id",id)
+                .putExtra("captura",captura)
+                .putExtra("acabado","Obras Complementarias")) }
+        })
+
+        findViewById<LinearLayout>(R.id.caract).addView(Button(this).apply {
+            text = "Elementos Accesorios"
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT)
+            textSize=20F
+            setPadding(10)
+            setOnClickListener { startActivity(Intent(this@InmuebleActivity,ElementosAccesoriosAvtivity::class.java)
+                .putExtra("usuario",usuario)
+                .putExtra("id",id)
+                .putExtra("captura",captura)
+                .putExtra("acabado","Elementos Accesorios")) }
+        })
+
+
+        /*findViewById<LinearLayout>(R.id.caract).addView(Button(this).apply {
             text = "Alta de otro"
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT)
             textSize=20F
             setPadding(10)
-            setOnClickListener { startActivity(Intent(this@InmuebleActivity,AcabadosActivity::class.java).putExtra("usuario",usuario).putExtra("id",id).putExtra("acabado",text)) }
-        })
+            setOnClickListener { startActivity(Intent(this@InmuebleActivity,AfueraActivity::class.java)
+                .putExtra("usuario",usuario)
+                .putExtra("id",id)
+                .putExtra("captura",captura)
+                .putExtra("acabado",text.toString())) }
+        })*/
     }
 }

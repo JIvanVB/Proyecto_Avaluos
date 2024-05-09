@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PlatfonesActivity">
+    tools:context=".ElementosAccesoriosAvtivity">
 
     <TextView
         android:id="@+id/textViewTitulo"
@@ -17,7 +17,6 @@
         android:textSize="24sp"
         android:textStyle="bold"
         />
-
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"

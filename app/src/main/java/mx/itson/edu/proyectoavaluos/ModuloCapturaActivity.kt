@@ -29,9 +29,18 @@ class ModuloCapturaActivity : AppCompatActivity() {
             append(" ")
             append(usuario)
         }
-        findViewById<TextView>(R.id.textViewInmueble).setOnClickListener { startActivity(Intent(this,InmuebleActivity::class.java).putExtra("usuario",usuario).putExtra("id",id)) }
-        findViewById<TextView>(R.id.textViewEntorno).setOnClickListener { startActivity(Intent(this,EntornoActivity::class.java).putExtra("usuario",usuario).putExtra("id",id)) }
-        findViewById<TextView>(R.id.textViewFotografias).setOnClickListener { startActivity(Intent(this,FotosActivity::class.java).putExtra("usuario",usuario).putExtra("id",id)) }
+        findViewById<TextView>(R.id.textViewInmueble).setOnClickListener { startActivity(Intent(this,InmuebleActivity::class.java)
+            .putExtra("usuario",usuario)
+            .putExtra("id",id)
+            .putExtra("captura","inmueble"))}
+        findViewById<TextView>(R.id.textViewEntorno).setOnClickListener { startActivity(Intent(this,EntornoActivity::class.java)
+            .putExtra("usuario",usuario)
+            .putExtra("id",id)
+            .putExtra("captura","entorno")) }
+        findViewById<TextView>(R.id.textViewFotografias).setOnClickListener { startActivity(Intent(this,FotosActivity::class.java)
+            .putExtra("usuario",usuario)
+            .putExtra("id",id)
+            .putExtra("captura","fotos")) }
 
 
     }
